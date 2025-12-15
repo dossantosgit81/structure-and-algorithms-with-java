@@ -2,7 +2,7 @@ package org.example.linkedlist;
 
 import org.example.linkedlist.model.Node;
 
-public class LinkedList {
+public class LinkedList implements List{
 
     private Node head;
     private int count;
@@ -12,6 +12,7 @@ public class LinkedList {
         this.count = 0;
     }
 
+    @Override
     public void push(int element){
         Node node = new Node(element);
         if (head == null) {
@@ -24,6 +25,41 @@ public class LinkedList {
             current.setNext(node);
         }
         this.count++;
+    }
+
+    @Override
+    public void insert(int element, int position) {
+
+    }
+
+    @Override
+    public int getElementAt(int index) {
+        return 0;
+    }
+
+    @Override
+    public void remove(int element) {
+
+    }
+
+    @Override
+    public int indexOf(int element) {
+        return 0;
+    }
+
+    @Override
+    public void removeAt(int index) {
+
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public int size() {
+        return 0;
     }
 
     public void print(){
