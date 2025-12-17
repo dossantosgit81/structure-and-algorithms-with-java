@@ -7,7 +7,7 @@ import org.junit.Test;
 public class LinkedListTest {
 
     @Test
-    public void shouldInsertElementsWithSuccess(){
+    public void shouldPushElementsWithSuccess(){
         LinkedList linkedList = new LinkedList();
         linkedList.push(1);
         linkedList.push(2);
