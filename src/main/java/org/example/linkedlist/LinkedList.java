@@ -59,7 +59,7 @@ public class LinkedList implements List{
 
     @Override
     public int size() {
-        return 0;
+        return this.count;
     }
 
     public void print(){
