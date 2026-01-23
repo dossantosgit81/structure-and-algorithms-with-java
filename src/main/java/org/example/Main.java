@@ -1,18 +1,22 @@
 package org.example;
 
 import org.example.linkedlist.LinkedList;
+import org.example.reucursion.Recursion;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.push(1);
-        linkedList.push(2);
-        linkedList.push(3);
-        linkedList.push(4);
-        linkedList.push(5);
 
-        linkedList.print();
+        Recursion recursion = new Recursion();
+
+        // FB Iterative
+        int result = recursion.fibIterative(8);
+        System.out.println(result);
+
+        // TODO fatorial iterativo
+
+        // TODO Fibonacci iterative
+
+        //TODO Fatorial recursivo
+
     }
 }
