@@ -36,8 +36,27 @@ public class Recursion {
         if(n < 1) return 0;
         if(n <= 2) return 1;
         int x = fibRecursion(n-1);
-
         int y = fibRecursion(n-2);
         return x + y;
     }
+
+    /*Exercícios */
+    /*1. Contagem Regressiva*/
+    public void countRegressive(int n){
+        if(n < 0)
+            return;
+        System.out.println(n);
+        countRegressive(n-1);
+    }
+
+    /*2. Soma de array*/
+    /*
+    * Neste método, estou retornando recursivamente a soma de um um elemento a seu adjacente
+    *
+    * */
+    public int sumArrayRecursive(int[] arr, int indexInit, int indexLast){
+        if(indexInit == indexLast) return arr[indexLast];
+        else return arr[indexInit] + sumArrayRecursive(arr, indexInit+1, indexLast);
+    }
+
 }
