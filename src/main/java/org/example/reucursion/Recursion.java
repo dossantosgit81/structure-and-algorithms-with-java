@@ -59,4 +59,12 @@ public class Recursion {
         else return arr[indexInit] + sumArrayRecursive(arr, indexInit+1, indexLast);
     }
 
+    /*
+    * Neste método estou retornando da última string à string inicial recursivamente
+    * */
+    public String revertText(String text, int indexLast, int indexInit){
+       if(indexLast == indexInit) return String.valueOf(text.charAt(indexInit));
+       else return text.charAt(indexLast) + revertText(text, indexLast-1, indexInit);
+    }
+
 }
