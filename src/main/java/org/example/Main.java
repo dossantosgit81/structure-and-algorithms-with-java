@@ -7,9 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         Recursion recursion = new Recursion();
-
-        String text = recursion.revertText("Hungáro", 6, 0);
-        System.out.println(text);
+        boolean value = recursion.isPolydrome("arara", 4, 0);
+        System.out.println(recursion.revertTextPlyndrome("arara", 4, 0) + " " + value);
 
 
     }

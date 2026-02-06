@@ -54,9 +54,9 @@ public class Recursion {
     * Neste método, estou retornando recursivamente a soma de um um elemento a seu adjacente
     *
     * */
-    public int sumArrayRecursive(int[] arr, int indexInit, int indexLast){
-        if(indexInit == indexLast) return arr[indexLast];
-        else return arr[indexInit] + sumArrayRecursive(arr, indexInit+1, indexLast);
+    public int sumArrayRecursive(int[] arr, int index){
+        if(index == arr.length-1) return arr[arr.length-1];
+        else return arr[index] + sumArrayRecursive(arr, index+1);
     }
 
     /*
@@ -65,6 +65,16 @@ public class Recursion {
     public String revertText(String text, int indexLast, int indexInit){
        if(indexLast == indexInit) return String.valueOf(text.charAt(indexInit));
        else return text.charAt(indexLast) + revertText(text, indexLast-1, indexInit);
+    }
+
+    /*radar*/
+    public String revertTextPlyndrome(String text, int indexLast, int indexInit){
+        if(indexLast == indexInit) return String.valueOf(text.charAt(indexInit));
+        else return text.charAt(indexLast) + revertTextPlyndrome(text, indexLast-1, indexInit);
+    }
+    public boolean isPolydrome(String text, int indexLast, int indexInit){
+        String revertText = revertTextPlyndrome(text, indexLast, indexInit);
+        return revertText.equals(text);
     }
 
 }
