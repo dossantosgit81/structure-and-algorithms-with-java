@@ -68,13 +68,21 @@ public class Recursion {
     }
 
     /*radar*/
-    public String revertTextPlyndrome(String text, int indexLast, int indexInit){
+    public String revertTextPalindrome(String text, int indexLast, int indexInit){
         if(indexLast == indexInit) return String.valueOf(text.charAt(indexInit));
-        else return text.charAt(indexLast) + revertTextPlyndrome(text, indexLast-1, indexInit);
+        else return text.charAt(indexLast) + revertTextPalindrome(text, indexLast-1, indexInit);
     }
-    public boolean isPolydrome(String text, int indexLast, int indexInit){
-        String revertText = revertTextPlyndrome(text, indexLast, indexInit);
+    public boolean isPalindrome(String text, int indexLast, int indexInit){
+        String revertText = revertTextPalindrome(text, indexLast, indexInit);
         return revertText.equals(text);
+    }
+
+    public boolean isPalindromeUsingTwoPointers(String word, int start, int end){
+        if(start >= end) return true;
+        char cStart = word.charAt(start);
+        char cEnd = word.charAt(end);
+        if(cStart != cEnd) return false;
+        return isPalindromeUsingTwoPointers(word, start+1, end-1);
     }
 
 }

@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
 
         Recursion recursion = new Recursion();
-        boolean value = recursion.isPolydrome("arara", 4, 0);
-        System.out.println(recursion.revertTextPlyndrome("arara", 4, 0) + " " + value);
+        boolean result = recursion.isPalindromeUsingTwoPointers("osso", 0, 3);
 
+        System.out.println(result);
 
     }
 }
