@@ -85,4 +85,9 @@ public class Recursion {
         return isPalindromeUsingTwoPointers(word, start+1, end-1);
     }
 
+    public int numberRaised(int x, int n){
+        if(n == 1) return x;
+        return x * numberRaised(x, n-1);
+    }
+
 }
