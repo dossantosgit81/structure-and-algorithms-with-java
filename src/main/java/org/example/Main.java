@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         Recursion recursion = new Recursion();
-        int result = recursion.numberRaised(5, 3);
-        System.out.println(result);
-
+        int steps = 4;
+        int possibilities = recursion.challengeUpstairs(steps);
+        System.out.println("Para " + steps + " " + "Existe " + possibilities);
     }
 }

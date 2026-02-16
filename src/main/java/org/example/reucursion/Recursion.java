@@ -90,4 +90,10 @@ public class Recursion {
         return x * numberRaised(x, n-1);
     }
 
+    public int challengeUpstairs(int n){
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        return challengeUpstairs(n - 1) + challengeUpstairs(n - 2);
+    }
+
 }
