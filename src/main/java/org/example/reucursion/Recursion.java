@@ -1,5 +1,7 @@
 package org.example.reucursion;
 
+import java.util.HashMap;
+
 public class Recursion {
 
     public int fibIterative(int n){
@@ -32,13 +34,6 @@ public class Recursion {
     * neste caso x = 3 e y = 2
     * Resultando em 5
     * */
-    public int fibRecursion(int n){
-        if(n < 1) return 0;
-        if(n <= 2) return 1;
-        int x = fibRecursion(n-1);
-        int y = fibRecursion(n-2);
-        return x + y;
-    }
 
     /*Exercícios */
     /*1. Contagem Regressiva*/
@@ -92,8 +87,42 @@ public class Recursion {
 
     /*Pense no caso base primeiro,
       mas garanta que cada chamada recursiva aproxime você dele.*/
+    /*Tail call optimization = Acumalador*/
+    /*
+    - Control + shift + seta para cima ou para baixo move a linha
+    - Control + D duplica a linha atual
+    - Control + Alt + V é uma atalho para o extract variable
+    */
+
     public int challengeUpstairs(int n){
-        return 0;
+        if(n < 1) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 2;
+        int x = challengeUpstairs(n-1);
+        int y = challengeUpstairs(n-2);
+        return x+y;
     }
+
+    public int fibRecursion(int n){
+        if(n < 1) return 0;
+        if(n <= 2) return 1;
+        int x = fibRecursion(n-1);
+        int y = fibRecursion(n-2);
+        return x + y;
+    }
+
+    public long fibRecursionWithMemoization(Long n, HashMap<Long, Long> cache){
+        if(n < 1) return 0;
+        if(n <= 2) return 1;
+        if(cache.containsKey(n)) return cache.get(n);
+        else{
+            long x = fibRecursionWithMemoization(n-1, cache);
+            long y = fibRecursionWithMemoization(n-2, cache);
+            cache.put(n, x+y);
+            return x+y;
+        }
+    }
+
+
 
 }
