@@ -7,8 +7,8 @@ public class Node {
     }
 
     private Integer key;
-    private Integer left;
-    private Integer right;
+    private Node left;
+    private Node right;
 
     public Integer getKey() {
         return key;
@@ -18,19 +18,19 @@ public class Node {
         this.key = key;
     }
 
-    public Integer getRight() {
+    public Node getRight() {
         return right;
     }
 
-    public void setRight(Integer right) {
+    public void setRight(Node right) {
         this.right = right;
     }
 
-    public Integer getLeft() {
+    public Node getLeft() {
         return left;
     }
 
-    public void setLeft(Integer left) {
+    public void setLeft(Node left) {
         this.left = left;
     }
 

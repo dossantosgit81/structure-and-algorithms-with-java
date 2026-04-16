@@ -7,21 +7,24 @@ public class BinarySearchTree {
     public void insert(Integer key){
         if(root == null)
             root = new Node(key);
-        //else
+        else
+            insertNode(key, root);
     
     }
 
-    private void insertNode(Node rootNode, Integer newKey){
-        if(firstMinorSecond(rootNode.getKey(), newKey)){
-            if(rootNode.getLeft() == null)
-                rootNode.setLeft(newKey);
+    private void insertNode(Integer newKey, Node root){
+        boolean isLeft = newKey < root.getKey();
+        if(isLeft){
+            if(root.getLeft() == null)
+                root.setLeft(new Node(newKey));
+            else
+                insertNode(newKey, root.getLeft());
         }else{
-
+            if(root.getRight() ==  null)
+                root.setRight(new Node(newKey));
+            else
+                insertNode(newKey, root.getRight());
         }
-    }
-
-    private boolean firstMinorSecond(Integer first, Integer second){
-        return first < second;
     }
 
     public boolean search(Integer key){
