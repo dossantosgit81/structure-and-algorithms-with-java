@@ -32,6 +32,15 @@ public class BinarySearchTree {
     }
 
     public void inOrderTraverse(){
+        this.printInOrderTraverse(this.root);
+    }
+
+    private void printInOrderTraverse(Node el){
+        if(el != null){
+            printInOrderTraverse(el.getLeft());
+            System.out.println(el.getKey());
+            printInOrderTraverse(el.getRight());
+        }
     }
 
     public void preOrderTraverse(){
