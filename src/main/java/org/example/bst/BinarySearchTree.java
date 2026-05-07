@@ -35,6 +35,14 @@ public class BinarySearchTree {
         this.printInOrderTraverse(this.root);
     }
 
+    public void preOrderTraverse(){
+        this.printPreOrderTraverse(this.root);
+    }
+
+    public void postOrderTraverse(){
+        this.printPostOrderTraverse(this.root);
+    }
+
     private void printInOrderTraverse(Node el){
         if(el != null){
             printInOrderTraverse(el.getLeft());
@@ -43,11 +51,22 @@ public class BinarySearchTree {
         }
     }
 
-    public void preOrderTraverse(){
+     private void printPreOrderTraverse(Node el){
+        if(el != null){
+            System.out.println(el.getKey());
+            printPreOrderTraverse(el.getLeft());
+            printPreOrderTraverse(el.getRight());
+        }
     }
 
-    public void postOrderTraverse(){
+     private void printPostOrderTraverse(Node el){
+        if(el != null){
+            printPostOrderTraverse(el.getLeft());
+            printPostOrderTraverse(el.getRight());
+            System.out.println(el.getKey());
+        }
     }
+
 
     public void remove(Integer key){
     }

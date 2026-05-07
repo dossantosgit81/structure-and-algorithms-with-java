@@ -2,11 +2,11 @@ package org.example.bst;
 
 public class Node {
 
-    public Node(Integer key){
+    public Node(int key){
         this.key = key;
     }
 
-    private Integer key;
+    private int key;
     private Node left;
     private Node right;
 
@@ -14,7 +14,7 @@ public class Node {
         return key;
     }
 
-    public void setKey(Integer key) {
+    public void setKey(int key) {
         this.key = key;
     }
 
